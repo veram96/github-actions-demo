@@ -20,7 +20,7 @@ jobs:
         run: echo $VARIABLE_LOCAL
 
       - name: Despliega variable del repositorio
-        run: echo ${{ vars.VARIABLE_DEMO }}
+        run: echo ${{ $vars.VARIABLE_DEMO }}
 
       - name: No despliega secreto del repositorio
         run: echo ${{ secrets.MUY_SECRETO }}

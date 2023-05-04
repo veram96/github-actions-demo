@@ -1,0 +1,26 @@
+name: Expresiones
+
+env:
+   VARIABLE_LOCAL: soy una variable local. 
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Despliega variable local
+        run: echo $VARIABLE_LOCAL
+
+      - name: Despliega variable del repositorio
+        run: echo ${{ vars.VARIABLE_DEMO }}
+
+      - name: No despliega secreto del repositorio
+        run: echo ${{ secrets.MUY_SECRETO }}
